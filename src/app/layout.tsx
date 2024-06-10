@@ -3,9 +3,14 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/main.scss";
 import { ConfigProvider } from "antd";
 import Navbar from "@/components/organisms/Navbar/Navbar";
+import MainFooter from "@/components/organisms/Footer/Footer";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
+
+  
+
   <html lang="en">
+    
     <body>
       <ConfigProvider
         theme={{
@@ -19,13 +24,14 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
             borderRadius: 1,
             sizeStep: 4,
             colorBgBase: "#000000",
-            fontFamily: "Segoe UI",
+            fontFamily: 'Rajdhani, sans-serif',
           },
         }}
       >
         <AntdRegistry>
           <Navbar />
           {children}
+          <MainFooter text={`SPACEX © ${new Date().getFullYear()}`}/>
         </AntdRegistry>
       </ConfigProvider>
     </body>

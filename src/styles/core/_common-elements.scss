@@ -5,8 +5,14 @@
 html {
   scroll-behavior: smooth;
   body {
+    font-family: var.$font-family-base;
     background-color: var.$background-color-base;
     color: var.$text-color-base;
+  }
+
+  a{
+    color: var.$text-color-base;
+    text-decoration: none;
   }
 
   h1 {

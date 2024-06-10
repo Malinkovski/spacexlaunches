@@ -4,7 +4,7 @@ import { Button, Drawer, Layout, Menu } from "antd";
 import styles from "./navbar.module.scss";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "@/components/atoms/Logo/Logo";
-import NavFooter from "@/components/organisms/Footer/NavFooter";
+import NavFooter from "@/components/organisms/NavFooter/NavFooter";
 import Link from "next/link";
 
 const { Header } = Layout;

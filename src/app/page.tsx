@@ -14,19 +14,19 @@ const Home = () => (
     </HomeLayout>
     <HomeLayout className="aboutSectionBg">
       <Heading
-        subtitle="Welcome to"
+        subtitle="About"
         title="SpaceX Launches"
-        subtitle2="Explore the latest space missions"
+
         position="right"
       />
     </HomeLayout>
     <HomeLayout className="launchesSectionBg">
       <Heading
-        subtitle="Welcome to"
-        title="SpaceX Launches"
-        subtitle2="Explore the latest space missions"
+        subtitle="Checkout All"
+        title="Launches"
         position="center"
       />
+      
     </HomeLayout>
   </>
 );
