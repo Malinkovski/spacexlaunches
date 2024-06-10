@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+html {
+  scroll-behavior: smooth;
+  body {
+    background-color: var.$background-color-base;
+    color: var.$text-color-base;
+  }
+
+  h1 {
+    font-size: var.$font-size-h1;
+  }
+  h2 {
+    font-size: var.$font-size-h2;
+  }
+  h3 {
+    font-size: var.$font-size-h3;
+  }
+  h4 {
+    font-size: var.$font-size-h4;
+  }
+
+  @include mix.tablet-styles-down {
+    h1 {
+      font-size: calc(var.$font-size-h1 / 2);
+    }
+    h2 {
+      font-size: calc(var.$font-size-h2 / 2);
+    }
+    h3 {
+      font-size: calc(var.$font-size-h3 / 2);
+    }
+    h4 {
+      font-size: calc(var.$font-size-h4 / 2);
+    }
+  }
+}
+
+.titleSectionBg {
+  background-image: url("../../assets/img1.jpg") !important;
+
+}
+
+.aboutSectionBg {
+    background: linear-gradient(#00000000, #000000), url("../../assets/img2.jpg") !important;
+
+}
+
+.launchesSectionBg {
+    background: linear-gradient(#000000, #00000067), url("../../assets/img3.jpg") !important;
+  }

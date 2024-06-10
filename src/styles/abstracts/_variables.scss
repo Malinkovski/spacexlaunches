@@ -1,0 +1,38 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base:              "Brandon Grotesque", sans-serif;
+$font-size-base:                1rem;
+$font-size-h1:                  4rem;
+$font-size-h2:                  3rem;
+$font-size-h3:                  2.75rem;
+$font-size-h4:                  1.5rem;
+$line-height-base:              1.5;
+$font-weight-light:             300;
+$font-weight-normal:            400;
+$font-weight-medium:            500;
+$font-weight-bold:              900;
+
+// Size settings
+$gutter-base:                   rem-calc(30);
+
+// Color settings
+$text-color-base:             #ffffff;
+$text-color-primary:          #eeeeee;
+$text-color-secondary:        #000000;
+$text-color-teriary:          #ff4b15;
+$text-color-quartery:         #ffffff;
+
+$background-color-base:       #000000;
+$background-color-primary:    #000000;
+$background-color-secondary:  #fcfcfc;
+$background-color-teriary:    #fff;
+$background-color-quaternary: #ffffff;
+$background-color-op50:       #0000007c;
+
+
+// Color misc:

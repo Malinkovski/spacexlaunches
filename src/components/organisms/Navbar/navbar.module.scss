@@ -1,0 +1,48 @@
+@use "../../../styles/abstracts/variables" as var;
+@use "../../../styles/abstracts/mixins" as mix;
+@use "sass:math";
+
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var.$background-color-op50 !important;
+  z-index: 1000;
+}
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent !important;
+}
+.drawer {
+  display: flex;
+}
+.menuMobile {
+  background-color: transparent !important;
+}
+
+.burgerMenubutton {
+  display: none !important;
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none !important;
+  }
+  .burgerMenu {
+    display: inline-block;
+  }
+}
+
+.burgerMenu {
+  @include mix.tablet-styles-up {
+    display: none !important;
+  }
+}
