@@ -10,17 +10,22 @@
   justify-content: space-between;
   background-color: var.$background-color-op50 !important;
   z-index: 1000;
+  li{
+    background-color: transparent !important;
+  }
 }
 .menu {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   background-color: transparent !important;
-}
-.drawer {
-  display: flex;
-}
-.menuMobile {
+  letter-spacing: var.$letter-spacing-links;
+  }
+  .drawer {
+    display: flex;
+    }
+    .menuMobile {
+  letter-spacing: var.$letter-spacing-links;
   background-color: transparent !important;
 }
 
@@ -46,3 +51,5 @@
     display: none !important;
   }
 }
+
+

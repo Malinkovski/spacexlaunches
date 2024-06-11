@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import { Button, Drawer, Layout, Menu } from "antd";
 import styles from "./navbar.module.scss";
 import { MenuOutlined } from "@ant-design/icons";
-import Logo from "@/components/atoms/Logo/Logo";
-import NavFooter from "@/components/organisms/NavFooter/NavFooter";
+import Logo from "@/components/atoms/logo/Logo";
+import NavFooter from "@/components/organisms/navfooter/NavFooter";
 import Link from "next/link";
 
 const { Header } = Layout;
 
 const menuItems = [
-  { key: "1", label: <Link href="/">Home</Link> },
-  { key: "2", label: <Link href="/about">About</Link> },
-  { key: "3", label: <Link href="/launches">Launches</Link> },
+  { key: "1", label: "Home" },
+  { key: "2", label: "About" },
+  { key: "3", label: "Launches" },
 ];
 
 const Navbar = () => {
@@ -29,16 +29,21 @@ const Navbar = () => {
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={["1"]}
-        items={menuItems}
         className={styles.menu}
-      />
+        items={menuItems.map((item) => ({
+          key: item.key,
+          className: "link",
+          label: item.label,
+          onClick: () =>
+            (window.location.href = `#${item.label.toLowerCase()}`),
+        }))}
+      ></Menu>
       <Button className={styles.burgerMenu} type="text" onClick={showLoading}>
         <MenuOutlined />
       </Button>
       <Drawer
         closable
         destroyOnClose
-        title={<span>Menu</span>}
         placement="right"
         open={open}
         onClose={() => setOpen(false)}
@@ -47,11 +52,17 @@ const Navbar = () => {
         <Menu
           theme="dark"
           mode="vertical"
-          defaultSelectedKeys={["1"]}
-          items={menuItems}
+          defaultSelectedKeys={["1"]} 
           className={styles.menuMobile}
           onClick={() => setOpen(false)}
-        />
+          items={menuItems.map((item) => ({
+            key: item.key,
+            className: "link",
+            label: item.label,
+            onClick: () =>
+              (window.location.href = `#${item.label.toLowerCase()}`),
+          }))}
+        ></Menu>
         <NavFooter text={`SpaceX © ${new Date().getFullYear()}`} />
       </Drawer>
     </Header>

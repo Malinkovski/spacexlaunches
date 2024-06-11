@@ -11,7 +11,7 @@ const MainFooter = ({ text }: MainFooterProps) => {
   return (
     <Footer className={styles.footer}>
       <span>{text}</span>
-      <Link href="/">PRIVACY POLICY</Link>
+      <Link href="/" className="link">PRIVACY POLICY</Link>
     </Footer>
   );
 };

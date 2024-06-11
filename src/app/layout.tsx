@@ -2,12 +2,10 @@ import React from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/main.scss";
 import { ConfigProvider } from "antd";
-import Navbar from "@/components/organisms/Navbar/Navbar";
-import MainFooter from "@/components/organisms/Footer/Footer";
+import Navbar from "@/components/organisms/navbar/Navbar";
+import MainFooter from "@/components/organisms/footer/Footer";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
-
-  
 
   <html lang="en">
     
@@ -16,9 +14,9 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
         theme={{
           token: {
             colorTextBase: "#ffffff",
-            colorPrimary: "#000000",
+            colorPrimary: "transparent",
             colorInfo: "#ffffff",
-            colorLink: "#1677ff",
+            colorLink: "#ffffff",
             fontSize: 16,
             wireframe: false,
             borderRadius: 1,
