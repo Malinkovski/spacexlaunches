@@ -9,12 +9,11 @@
     justify-content: center;
     align-items: center;
     background-color: #00000048;
-    border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
     z-index: 100;
     &:hover {
-        background-color: #00000071;
+        background-color: #00000093;
         }
         svg {
             font-size: 2rem !important;

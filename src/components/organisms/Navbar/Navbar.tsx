@@ -1,21 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Drawer, Layout, Menu } from "antd";
+import { Button, Drawer, Menu } from "antd";
+import { Header } from "antd/es/layout/layout";
 import styles from "./navbar.module.scss";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "@/components/atoms/logo/Logo";
 import NavFooter from "@/components/organisms/navfooter/NavFooter";
-import Link from "next/link";
+import { homeItems } from "@/utilities/navbarItems";
+import { detailItems } from "@/utilities/navbarItems";
 
-const { Header } = Layout;
+interface NavbarProps {
+  navbarFor: "home" | "details";
+}
 
-const menuItems = [
-  { key: "1", label: "Home" },
-  { key: "2", label: "About" },
-  { key: "3", label: "Launches" },
-];
-
-const Navbar = () => {
+const Navbar = ({ navbarFor }: NavbarProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const showLoading = () => {
@@ -30,12 +28,11 @@ const Navbar = () => {
         mode="horizontal"
         defaultSelectedKeys={["1"]}
         className={styles.menu}
-        items={menuItems.map((item) => ({
+        items={(navbarFor === "details" ? detailItems : homeItems).map((item) => ({
           key: item.key,
           className: "link",
           label: item.label,
-          onClick: () =>
-            (window.location.href = `#${item.label.toLowerCase()}`),
+          onClick: () => (window.location.href = `${item.href.toLowerCase()}`),
         }))}
       ></Menu>
       <Button className={styles.burgerMenu} type="text" onClick={showLoading}>
@@ -52,15 +49,15 @@ const Navbar = () => {
         <Menu
           theme="dark"
           mode="vertical"
-          defaultSelectedKeys={["1"]} 
+          defaultSelectedKeys={["1"]}
           className={styles.menuMobile}
           onClick={() => setOpen(false)}
-          items={menuItems.map((item) => ({
+          items={(navbarFor === "home" ? homeItems : detailItems).map((item) => ({
             key: item.key,
             className: "link",
             label: item.label,
             onClick: () =>
-              (window.location.href = `#${item.label.toLowerCase()}`),
+              (window.location.href = `${item.href.toLowerCase()}`),
           }))}
         ></Menu>
         <NavFooter text={`SpaceX © ${new Date().getFullYear()}`} />

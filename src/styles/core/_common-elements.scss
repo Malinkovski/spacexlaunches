@@ -12,8 +12,8 @@ body {
 }
 
 ::selection {
-  background-color: var.$background-color-secondary; 
-  color: var.$text-color-secondary;           
+  background-color: var.$background-color-secondary;
+  color: var.$text-color-secondary;
   text-shadow: none;
 }
 
@@ -22,7 +22,10 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: var.$font-weight-bold;
 }
 
@@ -80,13 +83,22 @@ h4 {
 //================================
 
 .titleSectionBg {
-  background-image: linear-gradient(to bottom, #00000000 90%, #000000 100%), url("../../assets/img1.jpg") !important;
+  background-image: linear-gradient(to bottom, #00000000 90%, #000000 100%),
+    url("../../assets/img1.jpg") !important;
 }
 
 .aboutSectionBg {
   background: linear-gradient(#00000000, #000000), url("../../assets/img2.jpg") !important;
 }
-
 .launchesSectionBg {
   background: linear-gradient(#000000, #00000067), url("../../assets/img3.jpg") !important;
+}
+.starstopBg {
+  background: linear-gradient(#00000075, #000000d8), url("../../assets/img5.jpg") !important;
+}
+.starsbottomBg {
+  background: linear-gradient(#000000, #00000067), url("../../assets/img5.jpg") !important;
+}
+.moonBg {
+  background: linear-gradient(#000000, #00000067), url("../../assets/img6.jpg") !important;
 }

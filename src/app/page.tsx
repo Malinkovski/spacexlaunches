@@ -3,9 +3,11 @@ import HomeLayout from "@/components/templates/homepage/HomeLayout";
 import Heading from "@/components/atoms/mainheading/MainHeading";
 import ScrollDownBtn from "@/components/atoms/scrolldownbtn/ScrollDownBtn";
 import ScrollUpBtn from "@/components/atoms/scrollupbtn/ScrollUpBtn";
+import NavBar from "@/components/organisms/navbar/Navbar";
 
 const Home = () => (
   <>
+  <NavBar navbarFor="home"/>
     <HomeLayout sectionId="home" className="titleSectionBg">
       <Heading
         subtitle="Welcome to"

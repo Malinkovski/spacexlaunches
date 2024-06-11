@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import Navbar from "@/components/organisms/navbar/Navbar";
 import MainFooter from "@/components/organisms/footer/Footer";
 
+
 const RootLayout = ({ children }: React.PropsWithChildren) => (
 
   <html lang="en">
@@ -17,7 +18,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
             colorPrimary: "transparent",
             colorInfo: "#ffffff",
             colorLink: "#ffffff",
-            fontSize: 16,
+            fontSize: 18,
             wireframe: false,
             borderRadius: 1,
             sizeStep: 4,
@@ -27,7 +28,6 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
         }}
       >
         <AntdRegistry>
-          <Navbar />
           {children}
           <MainFooter text={`SPACEX © ${new Date().getFullYear()}`}/>
         </AntdRegistry>

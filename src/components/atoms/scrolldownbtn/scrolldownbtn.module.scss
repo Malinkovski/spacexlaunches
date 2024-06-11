@@ -13,9 +13,6 @@
   transition: all 0.3s;
   z-index: 100;
   animation: pointdown 3s infinite;
-  &:hover {
-    background-color: #00000071;
-  }
   svg {
     font-size: 2rem !important;
   }
