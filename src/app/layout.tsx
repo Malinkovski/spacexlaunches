@@ -2,7 +2,6 @@ import React from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/main.scss";
 import { ConfigProvider } from "antd";
-import Navbar from "@/components/organisms/navbar/Navbar";
 import MainFooter from "@/components/organisms/footer/Footer";
 
 
@@ -15,7 +14,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
         theme={{
           token: {
             colorTextBase: "#ffffff",
-            colorPrimary: "transparent",
+            colorPrimary: "cccccc",
             colorInfo: "#ffffff",
             colorLink: "#ffffff",
             fontSize: 18,

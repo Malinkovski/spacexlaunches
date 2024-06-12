@@ -6,8 +6,7 @@ import styles from "./navbar.module.scss";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "@/components/atoms/logo/Logo";
 import NavFooter from "@/components/organisms/navfooter/NavFooter";
-import { homeItems } from "@/utilities/navbarItems";
-import { detailItems } from "@/utilities/navbarItems";
+import { HomeItems, DetailItems } from "@/utilities/navbarItems"; // Combine imports
 
 interface NavbarProps {
   navbarFor: "home" | "details";
@@ -20,6 +19,8 @@ const Navbar = ({ navbarFor }: NavbarProps) => {
     setOpen(true);
   };
 
+  const items = navbarFor === "details" ? DetailItems : HomeItems;
+
   return (
     <Header className={styles.header}>
       <Logo />
@@ -28,13 +29,13 @@ const Navbar = ({ navbarFor }: NavbarProps) => {
         mode="horizontal"
         defaultSelectedKeys={["1"]}
         className={styles.menu}
-        items={(navbarFor === "details" ? detailItems : homeItems).map((item) => ({
+        items={items.map((item) => ({
           key: item.key,
           className: "link",
           label: item.label,
-          onClick: () => (window.location.href = `${item.href.toLowerCase()}`),
+          onClick: () => (window.location.href = item.href.toLowerCase()),
         }))}
-      ></Menu>
+      />
       <Button className={styles.burgerMenu} type="text" onClick={showLoading}>
         <MenuOutlined />
       </Button>
@@ -52,14 +53,13 @@ const Navbar = ({ navbarFor }: NavbarProps) => {
           defaultSelectedKeys={["1"]}
           className={styles.menuMobile}
           onClick={() => setOpen(false)}
-          items={(navbarFor === "home" ? homeItems : detailItems).map((item) => ({
+          items={items.map((item) => ({
             key: item.key,
             className: "link",
             label: item.label,
-            onClick: () =>
-              (window.location.href = `${item.href.toLowerCase()}`),
+            onClick: () => (window.location.href = item.href.toLowerCase()),
           }))}
-        ></Menu>
+        />
         <NavFooter text={`SpaceX © ${new Date().getFullYear()}`} />
       </Drawer>
     </Header>

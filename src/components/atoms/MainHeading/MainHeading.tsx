@@ -6,6 +6,7 @@ interface MainHeadingProps {
   title: string;
   subtitle2?: string;
   position?: "left" | "right" | "center";
+  button?: React.ReactNode;
 }
 
 const MainHeading = ({
@@ -13,13 +14,17 @@ const MainHeading = ({
   title,
   subtitle2,
   position = "left",
+  button,
 }: MainHeadingProps) => {
   return (
+    <>
     <div className={`${styles.heading} ${styles[position]}`}>
       <h3>{subtitle}</h3>
       <h1>{title}</h1>
       <h4>{subtitle2}</h4>
+      {button}
     </div>
+    </>
   );
 };
 

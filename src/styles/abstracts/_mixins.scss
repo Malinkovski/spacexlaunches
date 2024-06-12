@@ -14,8 +14,8 @@
   }
 }
 
-@mixin laptop-xm-styles-down {
-  @media (max-width: 1224px) {
+@mixin laptop-styles-down {
+  @media (max-width: 1024px) {
     @content;
   }
 }

@@ -12,14 +12,19 @@
     "@ant-design/nextjs-registry": "^1.0.0",
     "@fontsource/rajdhani": "^5.0.13",
     "antd": "^5.18.0",
+    "aos": "^2.3.4",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "next": "14.2.3",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
-    "sass": "^1.77.4"
+    "react-visibility-sensor": "^5.1.1",
+    "sass": "^1.77.4",
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

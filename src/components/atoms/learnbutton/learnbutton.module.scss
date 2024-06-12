@@ -1,0 +1,17 @@
+@use "../../../styles/abstracts/variables" as var;
+@use "../../../styles/abstracts/mixins" as mix;
+
+.button{
+    margin-top: 30px;
+    background-color: #0000002f !important;
+    font-size: var.$font-size-h4 !important;
+    border-color: #fcfcfc !important;
+    padding: 25px 20px !important;
+
+    @include mix.tablet-styles-down {
+        padding: 20px 15px !important;
+        font-size: calc(var.$font-size-h4 / 1.5) !important;
+    }
+}
+
+

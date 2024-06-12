@@ -1,0 +1,42 @@
+@use "../../../styles/abstracts/mixins" as mix;
+
+.detailsContainer {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 100px;
+  list-style-type: none;
+
+  @include mix.laptop-styles-down {
+    gap: 50px !important;
+  }
+  @include mix.mobile-l-styles {
+    gap: 20px !important;
+  }
+
+  @include mix.mobile-l-styles {
+    flex-direction: column;
+    }
+    
+    li {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  .number {
+    text-shadow: 2px 2px #000000;
+    font-size: 8rem !important;
+    font-weight: 800;
+
+    @include mix.tablet-styles-down {
+      font-size: 5rem !important;
+    }
+    @include mix.mobile-l-styles {
+      font-size: 3rem !important;
+    }
+  }
+
+}
