@@ -1,14 +1,15 @@
 import React from "react";
-import HomeLayout from "../components/templates/homepage/HomeLayout";
-import Heading from "../components/atoms/mainheading/MainHeading";
-import ScrollDownBtn from "../components/atoms/scrolldownbtn/ScrollDownBtn";
-import ScrollUpBtn from "../components/atoms/scrollupbtn/ScrollUpBtn";
-import NavBar from "../components/organisms/navbar/Navbar";
-import LaunchesStats from "../components/organisms/launchesstats/LaunchesStats";
+
+import Heading from "./components/atoms/mainheading/MainHeading";
+import ScrollDownBtn from "./components/atoms/scrolldownbtn/ScrollDownBtn";
+import ScrollUpBtn from "./components/atoms/scrollupbtn/ScrollUpBtn";
+import NavBar from "./components/organisms/navbar/Navbar";
+import LaunchesStats from "./components/organisms/launchesstats/LaunchesStats";
 import { Button } from "antd";
-import LearnButton from "../components/atoms/learnbutton/LearnButton";
-import LaunchesList from "../components/organisms/launcheslist/LaunchesList";
-import LaunchesLayout from "../components/templates/homepage/LaunchesLayout";
+import LearnButton from "./components/atoms/learnbutton/LearnButton";
+import LaunchesList from "./components/organisms/launcheslist/LaunchesList";
+import LaunchesLayout from "./components/templates/homepage/LaunchesLayout";
+import HomeLayout from "./components/templates/homepage/HomeLayout";
 
 const Home = () => (
   <>

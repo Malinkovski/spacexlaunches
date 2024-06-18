@@ -1,5 +1,5 @@
-@use "../../../styles/abstracts/variables" as var;
-@use "../../../styles/abstracts/mixins" as mix;
+@use "../../../../styles/abstracts/variables" as var;
+@use "../../../../styles/abstracts/mixins" as mix;
 @use "sass:math";
 
 .navbarMenu {
@@ -18,11 +18,10 @@
 .section {
   position: relative;
   padding: 80px 50px 0px 50px;
-  height: 100vh;
   @include mix.mobile-m-styles {
     padding: 80px 20px 0px 20px;
   }
   background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+  background-repeat:repeat-y;
+  background-size: contain !important;
 }

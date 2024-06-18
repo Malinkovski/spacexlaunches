@@ -3,7 +3,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import styles from "./launchcard.module.scss";
 import Meta from "antd/es/card/Meta";
-import LearnButton from "../../../components/atoms/learnbutton/LearnButton";
+import LearnButton from "../../atoms/learnbutton/LearnButton";
 
 interface LaunchCardProps {
   title: string;

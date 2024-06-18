@@ -1,14 +1,13 @@
 import { Col, Row } from "antd";
 import React from "react";
 import styles from "./launcheslist.module.scss";
-import LaunchCard from "../../../components/molecules/launchcard/LaunchCard";
-import img1 from "../../../assets/placeholder.png";
-import img2 from "../../../assets/img1.jpg";
-import img3 from "../../../assets/img2.jpg";
-import img4 from "../../../assets/img3.jpg";
-import img5 from "../../../assets/img4.jpg";
-import img6 from "../../../assets/img5.jpg";
-import img7 from "../../../assets/img6.jpg";
+import LaunchCard from "../../molecules/launchcard/LaunchCard";
+import img2 from "../../../../assets/img1.jpg";
+import img3 from "../../../../assets/img2.jpg";
+import img4 from "../../../../assets/img3.jpg";
+import img5 from "../../../../assets/img4.jpg";
+import img6 from "../../../../assets/img5.jpg";
+import img7 from "../../../../assets/img6.jpg";
 
 const LaunchesList = () => {
   return (

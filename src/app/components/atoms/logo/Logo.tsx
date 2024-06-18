@@ -1,7 +1,6 @@
-"use client";
 import React from "react";
-import styles from "../Logo/logo.module.scss";
-import SpaceXLogo from "../../../assets/spacex-logo.png";
+import styles from "./logo.module.scss";
+import SpaceXLogo from "../../../../assets/spacex-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
