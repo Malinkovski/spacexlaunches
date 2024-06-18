@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-import styles from "./launchlayout.module.scss";
+import styles from "./launcheslayout.module.scss";
 import { Content } from "antd/es/layout/layout";
 
 interface LaunchLayoutProps {

@@ -1,22 +1,42 @@
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import styles from "./launchcard.module.scss";
 import Meta from "antd/es/card/Meta";
+import LearnButton from "@/components/atoms/learnbutton/LearnButton";
 
-const LaunchCard = () => {
+interface LaunchCardProps {
+  title: string;
+  date: string;
+  img: StaticImageData;
+  alt: string;
+  link: string;
+}
+
+const LaunchCard = ({ title, date, img, alt, link }: LaunchCardProps) => {
   return (
     <Card
-      hoverable
+      className={styles.card}
       cover={
-        <Image
-            width={500}
-            height={500}
-            alt="example"
-            src=""
-        />
+        <div className={styles.imageContainer}>
+          <Image
+            width={900}
+            height={900}
+            quality={100}
+            alt={alt}
+            src={img}
+            className={styles.image}
+          />
+        </div>
       }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
+      <div className={styles.date}>
+        <h4>{date}</h4>
+      </div>
+      <Meta
+        title={<h4>{title}</h4>}
+        description={<LearnButton text="Learn More" href={link}></LearnButton>}
+      />
     </Card>
   );
 };

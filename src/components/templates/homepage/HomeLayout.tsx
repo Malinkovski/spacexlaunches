@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Layout } from "antd";
 import styles from "./homeLayout.module.scss";
@@ -14,7 +13,7 @@ interface HomeLayoutProps {
 const HomeLayout = ({ children, className, sectionId }: HomeLayoutProps) => {
   return (
     <Layout id={sectionId} className={`${styles.section} ${className}`}>
-      <Content>
+      <Content className="container">
         <div>{children}</div>
       </Content>
     </Layout>

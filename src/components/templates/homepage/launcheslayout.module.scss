@@ -1,0 +1,27 @@
+@use "../../../styles/abstracts/variables" as var;
+@use "../../../styles/abstracts/mixins" as mix;
+@use "sass:math";
+
+.navbarMenu {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: var.$background-color-base !important;
+}
+
+.menu {
+  background-color: var.$background-color-base !important;
+}
+
+.section {
+  position: relative;
+  padding: 80px 50px 0px 50px;
+  @include mix.mobile-m-styles {
+    padding: 80px 20px 0px 20px;
+  }
+  background-position: center !important;
+  background-repeat:repeat-y;
+  background-size: contain !important;
+}
