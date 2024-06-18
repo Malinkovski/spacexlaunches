@@ -7,6 +7,7 @@ import NavBar from "@/components/organisms/navbar/Navbar";
 import LaunchesStats from "@/components/organisms/launchesstats/LaunchesStats";
 import { Button } from "antd";
 import LearnButton from "@/components/atoms/learnbutton/LearnButton";
+import LaunchesList from "@/components/organisms/launcheslist/LaunchesList";
 
 const Home = () => (
   <>
@@ -32,11 +33,12 @@ const Home = () => (
       <ScrollDownBtn scrollTo="launches"/>
     </HomeLayout>
     <HomeLayout sectionId="launches" className="launchesSectionBg">
-      <Heading
+{/*       <Heading
         subtitle="Checkout All"
         title="Launches"
         position="center"
-      />
+      /> */}
+      <LaunchesList/>
       <ScrollUpBtn/>
     </HomeLayout>
   </>

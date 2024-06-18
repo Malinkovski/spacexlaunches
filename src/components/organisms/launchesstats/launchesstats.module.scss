@@ -10,7 +10,7 @@
   list-style-type: none;
 
   @include mix.laptop-styles-down {
-    gap: 50px !important;
+    gap: 40px !important;
   }
   @include mix.mobile-l-styles {
     gap: 20px !important;
@@ -26,17 +26,19 @@
       text-align: center;
       text-transform: uppercase;
     }
-  .number {
+    .number {
+    width: 220px;
     text-shadow: 2px 2px #000000;
     font-size: 8rem !important;
     font-weight: 800;
-
     @include mix.tablet-styles-down {
+      width: 120px;
       font-size: 5rem !important;
     }
     @include mix.mobile-l-styles {
       font-size: 3rem !important;
     }
   }
+
 
 }
