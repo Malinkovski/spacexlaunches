@@ -4,9 +4,9 @@ import { Button, Drawer, Menu } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styles from "./navbar.module.scss";
 import { MenuOutlined } from "@ant-design/icons";
-import Logo from "@/components/atoms/logo/Logo";
-import NavFooter from "@/components/organisms/navfooter/NavFooter";
-import { HomeItems, DetailItems } from "@/utilities/navbarItems"; // Combine imports
+import Logo from "../../../components/atoms/logo/Logo";
+import NavFooter from "../../../components/organisms/navfooter/NavFooter";
+import { HomeItems, DetailItems } from "../../../utilities/navbarItems"; // Combine imports
 
 interface NavbarProps {
   navbarFor: "home" | "details";

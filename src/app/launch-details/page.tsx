@@ -1,7 +1,7 @@
 import React from "react";
-import LaunchLayout from "@/components/templates/detailpage/LaunchLayout";
-import Heading from "@/components/atoms/mainheading/MainHeading";
-import Navbar from "@/components/organisms/navbar/Navbar";
+import LaunchLayout from "../../components/templates/detailpage/LaunchLayout";
+import Heading from "../../components/atoms/mainheading/MainHeading";
+import Navbar from "../../components/organisms/navbar/Navbar";
 
 const LaunchDetails = () => (
   <>
