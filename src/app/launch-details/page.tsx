@@ -1,57 +1,79 @@
+'use client';
 import React from "react";
 import LaunchLayout from "../components/templates/detailpage/LaunchLayout";
 import Heading from "../components/atoms/mainheading/MainHeading";
 import Navbar from "../components/organisms/navbar/Navbar";
+import DetailsHeading from "../components/atoms/detailsheading/DetailsHeading";
+import img1 from "../../assets/img3.jpg";
+import Image from "next/image";
+import BackButton from "../components/atoms/backbutton/BackButton";
+import LaunchDetailCard from "../components/molecules/launchdetailcard/LaunchDetailCard";
+import CarouselImages from "../components/organisms/carouselimages/CarouselImages";
+import LaunchDescription from "../components/organisms/launchdescription/LaunchDescription";
+import Comments from "../components/organisms/comments/Comments";
+
+//===================================== TEMPORARY DATA
+import img2 from "../../assets/img1.jpg";
+import img3 from "../../assets/img2.jpg";
+import img4 from "../../assets/img3.jpg";
+import img5 from "../../assets/img4.jpg";
+import img6 from "../../assets/img5.jpg";
+import img7 from "../../assets/img6.jpg";
+
+const images = [img4, img3, img2, img5, img6, img7].map((img) => img.src);
+//===================================== TEMPORARY DATA
 
 const LaunchDetails = () => (
   <>
     <Navbar navbarFor="details" />
     <LaunchLayout sectionId="preview" className="starstopBg">
-      <Heading
-        subtitle=""
-        subtitle2="June 6, 2024"
-        title="Starship's Fourth Flight Test"
-        position="left"
-      />
+      <LaunchDetailCard>
+        <BackButton href="/#launches" text="back to launches" />
+        <div className="video">
+          <iframe
+            width="1920"
+            height="1080"
+            src="https://www.youtube.com/embed/5nLk_Vqp7nw"
+            title="YouTube video player"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <DetailsHeading />
+      </LaunchDetailCard>
     </LaunchLayout>
-    <LaunchLayout sectionId="details" className="moonBg">
+    <LaunchLayout sectionId="details" className="starstopBg">
+      <LaunchDescription>
+        <p>
+          Axiom Mission 1 (or Ax-1) is a planned SpaceX Crew Dragon mission to
+          the International Space Station (ISS), operated by SpaceX on behalf of
+          Axiom Space. The flight will launch no earlier than 31 March 2022 and
+          send four people to the ISS for an eight-day stay.
+        </p>
+      </LaunchDescription>
+      <CarouselImages images={images} />
       <div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          dicta alias tempore, laborum repellat laudantium amet porro magnam
-          ipsa placeat molestiae maiores repellendus nihil corporis provident
-          nulla ea rerum reprehenderit. Quam iure ut est blanditiis quidem optio
-          earum deleniti voluptate deserunt, minima temporibus magnam natus, in
-          fugit voluptates. Alias, esse.
-        </p>
+        <h4>More info:</h4>
+        <br />
+        <h5>Link:</h5>
         <br />
         <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nam
-          facere deserunt saepe quis corporis dolorem eligendi ipsam blanditiis
-          enim voluptate debitis quasi necessitatibus ad quibusdam sapiente,
-          magni sint explicabo. Iste, quod laborum vero harum nam cupiditate?
-          Expedita quod modi, quia aperiam earum itaque ad reprehenderit odit
-          voluptas harum unde libero quibusdam voluptatibus possimus cupiditate
-          temporibus aliquam deleniti eius! Dolorem aperiam, dicta, neque quo
-          repudiandae laudantium minus aliquam facilis odit quis eum dolor? Sint
-          rerum cupiditate molestias tenetur accusantium autem tempore dolores
-          fuga magnam rem laudantium, minima libero perspiciatis distinctio
-          alias maxime sapiente, pariatur, doloremque modi architecto ipsa
-          dolorum nesciunt?
-        </p>
+        <h5>Link:</h5>
         <br />
         <br />
+        <h5>Link:</h5>
         <br />
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
-          cupiditate, accusamus sit, voluptatem possimus ad totam ipsum
-          accusantium et cumque quidem corrupti. Ducimus, explicabo eligendi.
-        </p>
+        <br />
+        <h5>Link:</h5>
+        <br />
+        <br />
       </div>
     </LaunchLayout>
-    <LaunchLayout sectionId="comments" className="starsbottomBg">
-      <Heading subtitle="" title="" subtitle2="Comments:" position="left" />
+    <LaunchLayout sectionId="comments" className="starsbottomBg comments">
+      <h3>Comments:</h3>
+      <br />
+      <Comments/>
+
     </LaunchLayout>
   </>
 );

@@ -20,7 +20,7 @@
   padding: 80px 50px 0px 50px;
   height: 100vh;
   @include mix.mobile-m-styles {
-    padding: 80px 20px 0px 20px;
+    padding: 10px 50px 0px 50px !important;
   }
   background-position: center !important;
   background-repeat: no-repeat !important;

@@ -1,3 +1,7 @@
+@use "../../../../styles/abstracts/variables" as var;
+@use "../../../../styles/abstracts/mixins" as mix;
+@use "sass:math";
+
 .heading {
   position: absolute;
   top: 50%;
@@ -8,14 +12,20 @@
 }
 
 .left {
-  left: 5%;
+  left: 120px;
   text-align: left;
+  @include mix.tablet-styles-down {
+    left: 10px;
+  }
 }
 
 .right {
-  right: 5%;
+  right: 120px;
   top: 65%;
   text-align: right;
+  @include mix.tablet-styles-down {
+    right: 10px;
+  }
 }
 
 .center {

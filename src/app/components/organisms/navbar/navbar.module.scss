@@ -15,6 +15,24 @@
   li{
     background-color: transparent !important;
   }
+  max-width: 2000px !important;
+  padding: 0 125px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 10px !important; 
+    width: 100%;
+
+  }
+  @media (max-width: 468px) {
+    width: 100%;
+
+  }
 }
 .menu {
   flex: 1;
@@ -45,6 +63,9 @@
   }
   .burgerMenu {
     display: inline-block;
+  }
+  .header{
+    padding: 0 10px !important;
   }
 }
 

@@ -1,0 +1,11 @@
+@use "../../../../styles/abstracts/variables" as var;
+@use "../../../../styles/abstracts/mixins" as mix;
+@use "sass:math";
+
+.button{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    display: inline-block;
+    
+}

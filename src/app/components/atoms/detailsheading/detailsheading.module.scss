@@ -1,0 +1,12 @@
+@use "../../../../styles/abstracts/variables" as var;
+@use "../../../../styles/abstracts/mixins" as mix;
+@use "sass:math";
+
+.heading {
+  margin: 50px 0;
+}
+
+.date {
+  color: var.$background-color-teriary;
+  margin-bottom: 10px;
+}
