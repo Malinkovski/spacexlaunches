@@ -3,12 +3,11 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/main.scss";
 import { ConfigProvider } from "antd";
 import MainFooter from "./components/organisms/footer/Footer";
-
+import client from "../graphql/apolloClient";
+import ApolloWrapper from "@/graphql/ApolloWrapper";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
-
   <html lang="en">
-    
     <body>
       <ConfigProvider
         theme={{
@@ -22,14 +21,16 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
             borderRadius: 1,
             sizeStep: 4,
             colorBgBase: "#000000",
-            fontFamily: 'Rajdhani, sans-serif',
+            fontFamily: "Rajdhani, sans-serif",
           },
         }}
       >
-        <AntdRegistry>
-          {children}
-          <MainFooter text={`SPACEX © ${new Date().getFullYear()}`}/>
-        </AntdRegistry>
+        <ApolloWrapper>
+          <AntdRegistry>
+            {children}
+            <MainFooter />
+          </AntdRegistry>
+        </ApolloWrapper>
       </ConfigProvider>
     </body>
   </html>
