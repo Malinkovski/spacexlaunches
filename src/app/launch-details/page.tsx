@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import LaunchLayout from "../components/templates/detailpage/LaunchLayout";
 import Heading from "../components/atoms/mainheading/MainHeading";
@@ -8,7 +8,7 @@ import img1 from "../../assets/img3.jpg";
 import Image from "next/image";
 import BackButton from "../components/atoms/backbutton/BackButton";
 import LaunchDetailCard from "../components/molecules/launchdetailcard/LaunchDetailCard";
-import CarouselImages from "../components/organisms/carouselimages/CarouselImages";
+import CarouselImages from "../components/molecules/carouselimages/CarouselImages";
 import LaunchDescription from "../components/organisms/launchdescription/LaunchDescription";
 import Comments from "../components/organisms/comments/Comments";
 
@@ -19,8 +19,11 @@ import img4 from "../../assets/img3.jpg";
 import img5 from "../../assets/img4.jpg";
 import img6 from "../../assets/img5.jpg";
 import img7 from "../../assets/img6.jpg";
+import LaunchMedia from "../components/organisms/launchmedia/LaunchMedia";
 
-const images = [img4, img3, img2, img5, img6, img7].map((img) => img.src);
+const images: string[] = [img1, img2, img3, img4, img5, img6, img7].map(
+  (img) => img.src
+);
 //===================================== TEMPORARY DATA
 
 const LaunchDetails = () => (
@@ -51,29 +54,12 @@ const LaunchDetails = () => (
           send four people to the ISS for an eight-day stay.
         </p>
       </LaunchDescription>
-      <CarouselImages images={images} />
-      <div>
-        <h4>More info:</h4>
-        <br />
-        <h5>Link:</h5>
-        <br />
-        <br />
-        <h5>Link:</h5>
-        <br />
-        <br />
-        <h5>Link:</h5>
-        <br />
-        <br />
-        <h5>Link:</h5>
-        <br />
-        <br />
-      </div>
+      <LaunchMedia images={images} />
     </LaunchLayout>
     <LaunchLayout sectionId="comments" className="starsbottomBg comments">
       <h3>Comments:</h3>
       <br />
-      <Comments/>
-
+      <Comments />
     </LaunchLayout>
   </>
 );
