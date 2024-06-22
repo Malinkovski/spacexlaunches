@@ -1,4 +1,4 @@
-`use client`;
+"use client";
 import React from "react";
 import { LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
 import { Avatar, List, Space } from "antd";
@@ -23,7 +23,7 @@ const Comments: React.FC = () => (
     itemLayout="vertical"
     size="large"
     pagination={{
-      pageSize: 5,
+      pageSize: 4,
     }}
     dataSource={data}
     renderItem={(item) => (

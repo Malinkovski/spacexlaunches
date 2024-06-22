@@ -6,11 +6,12 @@ interface LearnButtonProps {
   className?: string;
   text: string;
   href?: string;
+  title?: string;
 }
 
-const LearnButton = ({className, text, href}:LearnButtonProps) => {
+const LearnButton = ({className, text, href, title}:LearnButtonProps) => {
   return (
-    <Button href={href} className={`${className} ${styles.button}`}>
+    <Button title={title || "Learn more"} href={href} className={`${className} ${styles.button}`}>
       <span>{text}</span>
     </Button>
   );

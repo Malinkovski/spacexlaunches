@@ -17,6 +17,7 @@
   }
   .mediaLinks {
     margin-left: 50px;
+    margin-top: 10px;
     width: calc(50% - 50px);
     float: right;
     @include mix.tablet-styles-down {
