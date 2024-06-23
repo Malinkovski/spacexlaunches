@@ -4,13 +4,13 @@ import styles from "./footer.module.scss";
 import Link from "next/link";
 
 interface MainFooterProps {
-  text: string;
+  text?: string;
 }
 
 const MainFooter = ({ text }: MainFooterProps) => {
   return (
     <Footer className={styles.footer}>
-      <span>{text}</span>
+      <span>{text || `SPACEX © ${new Date().getFullYear()}`}</span>
       <Link href="/" className="link">PRIVACY POLICY</Link>
     </Footer>
   );

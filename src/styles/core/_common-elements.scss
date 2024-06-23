@@ -5,34 +5,44 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  @extend %fade-in-page;
 }
+
 body {
   font-family: var.$font-family-base;
   background-color: var.$background-color-base;
   color: var.$text-color-base;
-  
 }
 .container {
+  @extend %fade-in-page;
   max-width: 2000px !important;
   margin: 0 auto !important;
   width: 100% !important;
 
   @media (max-width: 1200px) {
     width: 100%;
-    
   }
-  
+
   @media (max-width: 768px) {
     width: 100%;
-
   }
   @media (max-width: 468px) {
     width: 100%;
-
   }
 }
-.comments{
+.comments {
   min-height: 50vh !important;
+}
+
+.center-item-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.resize-300-300 {
+  width: 300px !important;
+  height: 300px !important;
 }
 
 
@@ -119,13 +129,15 @@ h4 {
   background: linear-gradient(#000000, #00000067), url("../../assets/img3.jpg") !important;
 }
 .starstopBg {
-  background: linear-gradient(#00000075, #000000d8), url("../../assets/img5.jpg") !important;
+  background: linear-gradient(#00000075, #000000d8),
+    url("../../assets/img5.jpg") !important;
 }
 .starsbottomBg {
   background: linear-gradient(#000000, #00000067), url("../../assets/img5.jpg") !important;
 }
 .starsBg {
-  background: linear-gradient(#0000009d, #0000009d), url("../../assets/img5.jpg") !important;
+  background: linear-gradient(#0000009d, #0000009d),
+    url("../../assets/img5.jpg") !important;
 }
 .moonBg {
   background: linear-gradient(#000000, #00000067), url("../../assets/img6.jpg") !important;

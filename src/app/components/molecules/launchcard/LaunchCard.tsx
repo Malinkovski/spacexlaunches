@@ -16,6 +16,9 @@ interface LaunchCardProps {
 const LaunchCard = ({ title, date, img, alt, link }: LaunchCardProps) => {
   return (
     <Card
+      data-aos="fade-up"
+      data-aos-duration="300"
+      data-aos-once="true"
       className={styles.card}
       cover={
         <div className={styles.imageContainer}>
@@ -31,10 +34,16 @@ const LaunchCard = ({ title, date, img, alt, link }: LaunchCardProps) => {
       }
     >
       <div className={styles.date}>
-        <h4>{date}</h4>
+        <h4 data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+          {date}
+        </h4>
       </div>
       <Meta
-        title={<h4>{title}</h4>}
+        title={
+          <h4 data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
+            {title}
+          </h4>
+        }
         description={<LearnButton text="Learn More" href={link}></LearnButton>}
       />
     </Card>

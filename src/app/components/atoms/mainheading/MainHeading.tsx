@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./mainheading.module.scss";
+import AOSWrapper from "../aoswrapper/AosWrapper";
 
 interface MainHeadingProps {
   subtitle: string;
@@ -18,12 +19,16 @@ const MainHeading = ({
 }: MainHeadingProps) => {
   return (
     <>
-    <div className={`${styles.heading} ${styles[position]}`}>
-      <h3>{subtitle}</h3>
-      <h1>{title}</h1>
-      <h4>{subtitle2}</h4>
-      {button}
-    </div>
+      <AOSWrapper>
+        <div
+          className={`${styles.heading} ${styles[position]}`}
+        >
+          <h3 data-aos="fade-up" data-aos-duration="400">{subtitle}</h3>
+          <h1 data-aos="fade-up" data-aos-duration="500">{title}</h1>
+          <h4 data-aos="fade-up" data-aos-duration="600">{subtitle2}</h4>
+          <div data-aos="fade-up" data-aos-duration="700">{button}</div>
+        </div>
+      </AOSWrapper>
     </>
   );
 };

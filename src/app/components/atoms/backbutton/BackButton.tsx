@@ -10,7 +10,7 @@ interface BackButtonProps {
 
 const BackButton = ({ href, text }: BackButtonProps) => {
   return (
-    <Link className={`${styles.button} link`} href={href}>
+    <Link data-aos="fade-left" data-aos-duration="500" className={`${styles.button} link`} href={href}>
       <LeftOutlined />
       {text.toUpperCase()}
     </Link>

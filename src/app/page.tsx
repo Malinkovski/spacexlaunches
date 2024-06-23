@@ -1,5 +1,4 @@
 import React from "react";
-
 import Heading from "./components/atoms/mainheading/MainHeading";
 import ScrollDownBtn from "./components/atoms/scrolldownbtn/ScrollDownBtn";
 import ScrollUpBtn from "./components/atoms/scrollupbtn/ScrollUpBtn";
@@ -10,6 +9,8 @@ import LearnButton from "./components/atoms/learnbutton/LearnButton";
 import LaunchesList from "./components/organisms/launcheslist/LaunchesList";
 import LaunchesLayout from "./components/templates/homepage/LaunchesLayout";
 import HomeLayout from "./components/templates/homepage/HomeLayout";
+
+
 
 const Home = () => (
   <>
@@ -29,7 +30,7 @@ const Home = () => (
       <Heading subtitle="About" title="SpaceX Launches" position="right" />
       <ScrollDownBtn scrollTo="launches" />
     </HomeLayout>
-    <LaunchesLayout sectionId="launches" className="starsBg">
+    <LaunchesLayout data-aos-duration="400" sectionId="launches" className="starsBg">
       <LaunchesList />
       <ScrollUpBtn />
     </LaunchesLayout>

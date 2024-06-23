@@ -5,7 +5,16 @@ interface LaunchDescriptionProps {
 }
 
 const LaunchDescription = ({ children }: LaunchDescriptionProps) => {
-  return <div className={styles.launchdetails}>{children}</div>;
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-duration="400"
+      data-aos-once="true"
+      className={styles.launchdetails}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default LaunchDescription;
