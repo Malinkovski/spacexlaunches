@@ -1,15 +1,10 @@
 import { gql } from "@apollo/client";
 
 export const LAUNCH_STATS_QUERY = gql`
-  query GetLaunchStats {
+  query GetPastLaunches {
     launches {
-      total
-    }
-    landings {
-      total
-    }
-    reflights {
-      total
+      id
+      launch_success
     }
   }
 `;

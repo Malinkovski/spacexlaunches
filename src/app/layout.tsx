@@ -3,7 +3,6 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/main.scss";
 import { ConfigProvider } from "antd";
 import MainFooter from "./components/organisms/footer/Footer";
-import client from "../graphql/apolloClient";
 import ApolloWrapper from "@/graphql/ApolloWrapper";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (

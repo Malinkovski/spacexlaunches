@@ -1,8 +1,26 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloLink, HttpLink } from "@apollo/client";
+import {
+    ApolloClient,
+  ApolloNextAppProvider,
+  InMemoryCache,
+  SSRMultipartLink,
+} from "@apollo/experimental-nextjs-app-support";
+function apolloClient() {
+  const httpLink = new HttpLink({
+      uri: "https://spacex-production.up.railway.app/",
+  });
+  return new ApolloClient({
+    cache: new InMemoryCache(),
+    link:
+      typeof window === "undefined"
+        ? ApolloLink.from([
+            new SSRMultipartLink({
+              stripDefer: true,
+            }),
+            httpLink,
+          ])
+        : httpLink,
+  });
+}
 
-const client = new ApolloClient({
-  uri: "https://spacex-production.up.railway.app/http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
-});
-
-export default client;
+export default apolloClient;
