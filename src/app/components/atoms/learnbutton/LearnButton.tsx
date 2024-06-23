@@ -11,7 +11,7 @@ interface LearnButtonProps {
 
 const LearnButton = ({className, text, href, title}:LearnButtonProps) => {
   return (
-    <Button title={title || text || "Learn more"} href={href} className={`${className} ${styles.button}`}>
+    <Button data-aos="fade-up" data-aos-duration="900" data-aos-once="true" title={title || text || "Learn more"} href={href} className={`${className} ${styles.button}`}>
       <span>{text}</span>
     </Button>
   );

@@ -10,13 +10,6 @@ import { GetPastLaunchesQuery } from "@/graphql/generated/graphql";
 import { PuffLoader } from "react-spinners";
 
 const LaunchesStats = () => {
-  //animate on scroll
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-  }, []);
 
   //watch whenever component is in client view
   const ref = useRef<HTMLUListElement>(null);

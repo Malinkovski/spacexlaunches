@@ -1,16 +1,12 @@
 import React from "react";
 import LaunchLayout from "../components/templates/detailpage/LaunchLayout";
-import Heading from "../components/atoms/mainheading/MainHeading";
 import Navbar from "../components/organisms/navbar/Navbar";
 import DetailsHeading from "../components/atoms/detailsheading/DetailsHeading";
 import img1 from "../../assets/img3.jpg";
-import Image from "next/image";
 import BackButton from "../components/atoms/backbutton/BackButton";
 import LaunchDetailCard from "../components/molecules/launchdetailcard/LaunchDetailCard";
-import CarouselImages from "../components/molecules/carouselimages/CarouselImages";
 import LaunchDescription from "../components/organisms/launchdescription/LaunchDescription";
 import Comments from "../components/organisms/comments/Comments";
-
 //===================================== TEMPORARY DATA
 import img2 from "../../assets/img1.jpg";
 import img3 from "../../assets/img2.jpg";
@@ -33,7 +29,7 @@ const LaunchDetails = () => (
     <LaunchLayout sectionId="preview" className="starstopBg">
       <LaunchDetailCard>
         <BackButton href="/#launches" text="back to launches" />
-        <div className="video">
+        <div className="video" data-aos="fade-up" data-aos-duration="400" data-aos-once="true">
           <iframe
             width="1920"
             height="1080"

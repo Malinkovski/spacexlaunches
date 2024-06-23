@@ -10,8 +10,13 @@ const CommentWrite: React.FC = () => {
   const [value, setValue] = useState("");
 
   return (
-    <div className={styles.comment}>
-        <h4>Leave a comment:</h4>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="400"
+      data-aos-once="true"
+      className={styles.comment}
+    >
+      <h4>Leave a comment:</h4>
       <TextArea className={styles.input} placeholder="Name..." autoSize />
       <div />
       <TextArea
@@ -33,7 +38,6 @@ const CommentWrite: React.FC = () => {
         text="Send"
         className={styles.button}
       ></LearnButton>
-
     </div>
   );
 };

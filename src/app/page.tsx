@@ -30,7 +30,7 @@ const Home = () => (
       <Heading subtitle="About" title="SpaceX Launches" position="right" />
       <ScrollDownBtn scrollTo="launches" />
     </HomeLayout>
-    <LaunchesLayout sectionId="launches" className="starsBg">
+    <LaunchesLayout data-aos-duration="400" sectionId="launches" className="starsBg">
       <LaunchesList />
       <ScrollUpBtn />
     </LaunchesLayout>

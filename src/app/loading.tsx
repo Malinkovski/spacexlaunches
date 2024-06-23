@@ -14,10 +14,10 @@ const loading = () => {
       <PuffLoader
         color="white"
         loading={true}
-        size={550}
+        size={150}
         className="center-item-absolute"
       />
-      <Logo className="center-item-absolute resize-100-100"/>
+      {/* <Logo className="center-item-absolute resize-300-300"/> */}
     </LoadingLayout>
   );
 };

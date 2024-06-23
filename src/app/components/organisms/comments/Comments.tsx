@@ -28,6 +28,7 @@ const Comments: React.FC = () => (
     dataSource={data}
     renderItem={(item) => (
       <List.Item
+      data-aos="fade-up" data-aos-duration="400" data-aos-once="true"
         key={item.title}
         actions={[
           <IconText
