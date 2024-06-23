@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./loadingLayout.module.scss";
+import styles from "./loadinglayout.module.scss";
 import { Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 
