@@ -4,10 +4,16 @@ import SpaceXLogo from "../../../../assets/spacex-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+interface LogoProps {
+  className?: string;
+}
+
+const Logo = (
+  { className }: LogoProps,
+) => {
   return (
       <Link href="/">
-    <div title="home" className={styles.logo}>
+    <div title="home" className={`${styles.logo} ${className}`}>
         <Image
           src={SpaceXLogo}
           width={500}

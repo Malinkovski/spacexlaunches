@@ -2,11 +2,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./launchesstats.module.scss";
 import CountUp from "react-countup";
-import { useSuspenseQuery } from "@apollo/client";
+import { useQuery, useSuspenseQuery } from "@apollo/client";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { LAUNCH_STATS_QUERY } from "@/graphql/queries";
-import { Launch } from "@/utilities/types";
+import { GetPastLaunchesQuery } from "@/graphql/generated/graphql";
+import { PuffLoader } from "react-spinners";
 
 const LaunchesStats = () => {
   //animate on scroll
@@ -41,17 +42,19 @@ const LaunchesStats = () => {
     };
   }, [ref]);
 
-  interface LaunchData {
-    launches: Launch[];
-  }
+  const { data, error } = useSuspenseQuery<GetPastLaunchesQuery>(LAUNCH_STATS_QUERY);
 
-  const { data } = useSuspenseQuery<LaunchData>(LAUNCH_STATS_QUERY);
+  let totalLaunches = data?.launches?.length ?? 0;
+
+  if (error) {
+    return <div>Error fetching launch data.</div>;
+  }
 
   return (
     <ul className={styles.detailsContainer} ref={ref}>
       <li id="numbers1">
         <span className={styles.number}>
-          {isVisible && <CountUp end={data.launches.length} duration={4} />}
+          {isVisible && <CountUp end={totalLaunches} duration={4} />}
         </span>
         <h4 data-aos-anchor="#numbers1" data-aos="fade-up">
           total&nbsp;launches

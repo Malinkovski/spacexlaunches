@@ -1,7 +1,6 @@
 import { ApolloLink, HttpLink } from "@apollo/client";
 import {
     ApolloClient,
-  ApolloNextAppProvider,
   InMemoryCache,
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support";
