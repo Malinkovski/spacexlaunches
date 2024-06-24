@@ -2,15 +2,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./launchesstats.module.scss";
 import CountUp from "react-countup";
-import { useQuery, useSuspenseQuery } from "@apollo/client";
-import AOS from "aos";
+import { useSuspenseQuery } from "@apollo/client";
 import "aos/dist/aos.css";
-import { LAUNCH_STATS_QUERY } from "@/graphql/queries";
-import { GetPastLaunchesQuery } from "@/graphql/generated/graphql";
-import { PuffLoader } from "react-spinners";
+import { LAUNCH_STATS_QUERY } from "../../../../graphql/queries";
+import { GetPastLaunchesQuery } from "../../../../graphql/generated/graphql";
+import ErrorMessage from "../../atoms/error/ErrorMessage";
 
 const LaunchesStats = () => {
-
   //watch whenever component is in client view
   const ref = useRef<HTMLUListElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -35,12 +33,18 @@ const LaunchesStats = () => {
     };
   }, [ref]);
 
-  const { data, error } = useSuspenseQuery<GetPastLaunchesQuery>(LAUNCH_STATS_QUERY);
+  const { data, error } =
+    useSuspenseQuery<GetPastLaunchesQuery>(LAUNCH_STATS_QUERY);
 
   let totalLaunches = data?.launches?.length ?? 0;
+  //!for some reason in the spacex database all the launch_success values are null
+  //let totalLandings = data?.launches?.filter((launch) => launch?.launch_success).length ?? 0;
+  let totalLandings = 172;
+  let totalReflights = 144;
 
   if (error) {
-    return <div>Error fetching launch data.</div>;
+    console.error("Error fetching launch stats data:", error);
+    return <ErrorMessage errorName={error.name} errorMessage={error.message} />;
   }
 
   return (
@@ -55,7 +59,7 @@ const LaunchesStats = () => {
       </li>
       <li id="numbers2">
         <span className={styles.number}>
-          {isVisible && <CountUp end={254} duration={3} />}
+          {isVisible && <CountUp end={totalLandings} duration={3} />}
         </span>
         <h4 data-aos-anchor="#numbers2" data-aos="fade-up">
           total&nbsp;landings
@@ -63,7 +67,7 @@ const LaunchesStats = () => {
       </li>
       <li id="numbers3">
         <span className={styles.number}>
-          {isVisible && <CountUp end={184} duration={5} />}
+          {isVisible && <CountUp end={totalReflights} duration={5} />}
         </span>
         <h4 data-aos-anchor="#numbers3" data-aos="fade-up">
           reflights

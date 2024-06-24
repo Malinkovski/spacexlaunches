@@ -4,7 +4,7 @@ import "../styles/main.scss";
 import "aos/dist/aos.css";
 import { ConfigProvider } from "antd";
 import MainFooter from "./components/organisms/footer/Footer";
-import ApolloWrapper from "@/graphql/ApolloWrapper";
+import ApolloWrapper from "../graphql/ApolloWrapper";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
   <html lang="en">

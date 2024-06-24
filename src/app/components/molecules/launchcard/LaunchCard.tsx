@@ -8,7 +8,7 @@ import LearnButton from "../../atoms/learnbutton/LearnButton";
 interface LaunchCardProps {
   title: string;
   date: string;
-  img: StaticImageData;
+  img: StaticImageData | string;
   alt: string;
   link: string;
 }
@@ -35,16 +35,16 @@ const LaunchCard = ({ title, date, img, alt, link }: LaunchCardProps) => {
     >
       <div className={styles.date}>
         <h4 data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
-          {date}
+          {date.toLocaleUpperCase()}
         </h4>
       </div>
       <Meta
         title={
           <h4 data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
-            {title}
+            {title.toLocaleUpperCase()}
           </h4>
         }
-        description={<LearnButton text="Learn More" href={link}></LearnButton>}
+        description={<LearnButton className={styles.button} text="Learn More" href={link}></LearnButton>}
       />
     </Card>
   );

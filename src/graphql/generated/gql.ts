@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  query GetPastLaunches {\n    launches {\n      id\n      launch_success\n    }\n  }\n": types.GetPastLaunchesDocument,
+    "\nquery GetAllLaunches($limit: Int, $order: String, $sort: String) {\n  launches(limit: $limit, order: $order, sort: $sort) {\n    id\n    launch_date_utc\n    links {\n      flickr_images\n      video_link\n    }\n    mission_name\n    rocket {\n      rocket_name\n    }\n    launch_date_unix\n    launch_date_local\n  }\n}\n": types.GetAllLaunchesDocument,
 };
 
 /**
@@ -34,6 +35,10 @@ export function gql(source: string): unknown;
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  query GetPastLaunches {\n    launches {\n      id\n      launch_success\n    }\n  }\n"): (typeof documents)["\n  query GetPastLaunches {\n    launches {\n      id\n      launch_success\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\nquery GetAllLaunches($limit: Int, $order: String, $sort: String) {\n  launches(limit: $limit, order: $order, sort: $sort) {\n    id\n    launch_date_utc\n    links {\n      flickr_images\n      video_link\n    }\n    mission_name\n    rocket {\n      rocket_name\n    }\n    launch_date_unix\n    launch_date_local\n  }\n}\n"): (typeof documents)["\nquery GetAllLaunches($limit: Int, $order: String, $sort: String) {\n  launches(limit: $limit, order: $order, sort: $sort) {\n    id\n    launch_date_utc\n    links {\n      flickr_images\n      video_link\n    }\n    mission_name\n    rocket {\n      rocket_name\n    }\n    launch_date_unix\n    launch_date_local\n  }\n}\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

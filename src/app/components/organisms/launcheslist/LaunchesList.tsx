@@ -1,72 +1,93 @@
+"use client";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Col, Row } from "antd";
-import React from "react";
 import styles from "./launcheslist.module.scss";
 import LaunchCard from "../../molecules/launchcard/LaunchCard";
-import img2 from "../../../../assets/img1.jpg";
-import img3 from "../../../../assets/img2.jpg";
-import img4 from "../../../../assets/img3.jpg";
-import img5 from "../../../../assets/img4.jpg";
 import img6 from "../../../../assets/img5.jpg";
-import img7 from "../../../../assets/img6.jpg";
+import { GetAllLaunchesQuery, Launch } from "../../../../graphql/generated/graphql";
+import { ALL_LAUNCHES_QUERY } from "../../../../graphql/queries";
+import apolloClient from "../../../../graphql/apolloClient";
+import ErrorMessage from "../../atoms/error/ErrorMessage";
+import { youtubeThumbnailExtract } from "../../../../utilities/youtubeThumbnailExtract";
+import Spinner from "../../atoms/spinner/Spinner";
+import useLoadMore from "../../../../customhooks/useLoadMore";
 
 const LaunchesList = () => {
+  const [launches, setLaunches] = useState<Launch[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+  const [numberOfItems, setNumberOfItems] = useState(8);
+  const loadMoreDivRef = useRef<HTMLDivElement>(null);
+  useLoadMore({ loadMoreDivRef, setNumberOfItems });
+
+  //https://stackoverflow.com/a/58244389
+  const fetchLaunches = useCallback(async () => {
+    setLoading(true);
+    try {
+      const { data } = await apolloClient().query<GetAllLaunchesQuery>({
+        query: ALL_LAUNCHES_QUERY,
+        variables: {
+          sort: "launch_date_utc",
+          order: "desc",
+          limit: numberOfItems,
+        },
+        fetchPolicy: "network-only"
+      });
+      setLaunches(data.launches as Launch[]);
+    } catch (error) {
+      setError(error as Error);
+    } finally {
+      setLoading(false);
+    }
+  }, [numberOfItems]);
+
+  useEffect(() => {
+    fetchLaunches();
+  }, [numberOfItems, fetchLaunches]);
+
+  if (error) {
+    console.error("Error fetching data:", error);
+    return <ErrorMessage errorName={error.name} errorMessage={error.message} />;
+  }
+
   return (
-    <Row gutter={[32, 32]} className={styles.launches}>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 253"
-          date="24.12.2023"
-          img={img2}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 153"
-          date="3.2.2024"
-          img={img4}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 53"
-          date="5.4.2024"
-          img={img7}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 93"
-          date="1.2.2024"
-          img={img3}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 93"
-          date="1.1.2024"
-          img={img5}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-      <Col xs={24} sm={24} md={24} lg={12} className={styles.col}>
-        <LaunchCard
-          title="STARLINK LAUNCH 93"
-          date="15.2.2024"
-          img={img6}
-          link="launch-details"
-          alt="starlink launch"
-        />
-      </Col>
-    </Row>
+    <>
+      <Row gutter={[32, 32]} className={styles.launches}>
+        {launches.map((launch, index) =>
+          !launch?.links?.flickr_images?.[0] &&
+          !launch?.links?.video_link ? null : (
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={12}
+              className={styles.col}
+              key={launch?.id || index}
+            >
+              <LaunchCard
+                title={`${launch?.rocket?.rocket_name} - ${launch?.mission_name}`}
+                date={
+                  new Date(launch?.launch_date_unix * 1000).toLocaleDateString(
+                    "en-US",
+                    { year: "numeric", month: "long", day: "numeric" }
+                  ) || ""
+                }
+                img={
+                  launch?.links?.flickr_images?.[0] ||
+                  (launch?.links?.video_link &&
+                    youtubeThumbnailExtract(launch?.links?.video_link)) ||
+                  img6
+                }
+                link={launch?.id ? `launch-details/${launch.id}` : "#launches"}
+                alt={`${launch?.rocket?.rocket_name} - ${launch?.mission_name}`}
+              />
+            </Col>
+          )
+        )}
+      </Row>
+      {loading && <Spinner />}
+      <div ref={loadMoreDivRef}></div>
+    </>
   );
 };
 
