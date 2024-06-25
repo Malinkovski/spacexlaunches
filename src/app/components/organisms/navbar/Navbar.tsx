@@ -7,10 +7,8 @@ import { MenuOutlined } from "@ant-design/icons";
 import Logo from "../../atoms/logo/Logo";
 import NavFooter from "../navfooter/NavFooter";
 import { HomeItems, DetailItems } from "../../../../utilities/navbarItems"; // Combine imports
+import { NavbarProps } from "@/utilities/types";
 
-interface NavbarProps {
-  navbarFor?: "home" | "details";
-}
 
 const Navbar = ({ navbarFor }: NavbarProps) => {
   const [open, setOpen] = useState<boolean>(false);

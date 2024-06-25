@@ -2,18 +2,13 @@ import React from "react";
 import styles from "./loadinglayout.module.scss";
 import { Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
-
-interface Error404LayoutProps {
-  sectionId: string;
-  className: string;
-  children: React.ReactNode;
-}
+import { LayoutProps } from "@/utilities/types";
 
 const LoadingLayout = ({
   sectionId,
   className,
   children,
-}: Error404LayoutProps) => {
+}: LayoutProps) => {
   return (
     <Layout id={sectionId} className={`${styles.section} ${className}`}>
       <Content className="container">

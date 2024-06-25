@@ -15,15 +15,34 @@
       object-fit: cover;
     }
   }
-  .mediaLinks {
+  .floatRight {
+    float: right;
+    width: calc(50% - 50px);
     margin-left: 50px;
     margin-top: 10px;
-    width: calc(50% - 50px);
-    float: right;
     @include mix.tablet-styles-down {
       width: 100%;
       float: none;
       margin-left: 0;
+    }
+  }
+  .mediaLinks {
+    h4 {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+    h5 {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      a{
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        span{
+          margin-top: 5px;
+        }
+      }
     }
   }
 }

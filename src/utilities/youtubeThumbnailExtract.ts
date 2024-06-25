@@ -7,12 +7,20 @@ const newImgUrl = (id: string) => {
 
 export const youtubeThumbnailExtract = (url: string) => {
   if (!url) return;
-
   if (url.includes("youtu.be")) {
     const videoId = url.split("be/")[1];
     return newImgUrl(videoId);
   } else if (url.includes("watch?v=")) {
     const videoId = url.split("v=")[1];
     return newImgUrl(videoId);
+  }
+};
+
+export const youtubeIdExtract = (url: string) => {
+  if (!url) return;
+  if (url.includes("youtu.be")) {
+    return url.split("be/")[1];
+  } else if (url.includes("watch?v=")) {
+    return url.split("v=")[1];
   }
 };

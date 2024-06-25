@@ -3,10 +3,7 @@ import styles from "./logo.module.scss";
 import SpaceXLogo from "../../../../assets/spacex-logo.png";
 import Image from "next/image";
 import Link from "next/link";
-
-interface LogoProps {
-  className?: string;
-}
+import { LogoProps } from "@/utilities/types";
 
 const Logo = (
   { className }: LogoProps,

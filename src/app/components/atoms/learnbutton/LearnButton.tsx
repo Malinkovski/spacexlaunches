@@ -1,13 +1,7 @@
 import { Button } from "antd";
 import React from "react";
 import styles from "./learnbutton.module.scss";
-
-interface LearnButtonProps {
-  className?: string;
-  text: string;
-  href?: string;
-  title?: string;
-}
+import { LearnButtonProps } from "@/utilities/types";
 
 const LearnButton = ({className, text, href, title}:LearnButtonProps) => {
   return (

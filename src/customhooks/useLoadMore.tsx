@@ -1,9 +1,5 @@
+import { UseLoadMoreProps } from "@/utilities/types";
 import { useEffect } from "react";
-
-interface UseLoadMoreProps {
-  loadMoreDivRef: React.RefObject<HTMLDivElement>;
-  setNumberOfItems: React.Dispatch<React.SetStateAction<number>>;
-}
 
 function useLoadMore({ loadMoreDivRef, setNumberOfItems }: UseLoadMoreProps) {
   useEffect(() => {
