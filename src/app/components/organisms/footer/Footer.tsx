@@ -2,10 +2,7 @@ import { Footer } from "antd/es/layout/layout";
 import React from "react";
 import styles from "./footer.module.scss";
 import Link from "next/link";
-
-interface MainFooterProps {
-  text?: string;
-}
+import { MainFooterProps } from "@/utilities/types";
 
 const MainFooter = ({ text }: MainFooterProps) => {
   return (

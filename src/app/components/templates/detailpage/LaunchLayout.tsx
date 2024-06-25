@@ -2,15 +2,9 @@ import React from "react";
 import { Layout } from "antd";
 import styles from "./launchlayout.module.scss";
 import { Content } from "antd/es/layout/layout";
+import { LayoutProps } from "@/utilities/types";
 
-interface LaunchLayoutProps {
-  children: React.ReactNode;
-  className?: string;
-  sectionId?: string;
-
-}
-
-const LaunchLayout = ({ children, className, sectionId }: LaunchLayoutProps) => {
+const LaunchLayout = ({ children, className, sectionId }: LayoutProps) => {
   return (
     <Layout id={sectionId} className={`${styles.section} ${className}`}>
       <Content className="container">

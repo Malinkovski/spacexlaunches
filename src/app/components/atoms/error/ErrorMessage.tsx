@@ -1,10 +1,6 @@
 import React from "react";
 import styles from "./error.module.scss";
-
-interface ErrorMessageProps {
-  errorName: string;
-  errorMessage: string;
-}
+import { ErrorMessageProps } from "@/utilities/types";
 
 const ErrorMessage = ({ errorMessage, errorName }: ErrorMessageProps) => {
   return (

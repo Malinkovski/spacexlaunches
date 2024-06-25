@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./launchdescription.module.scss";
-interface LaunchDescriptionProps {
-  children: React.ReactNode;
-}
+import { LaunchDescriptionProps } from "@/utilities/types";
 
-const LaunchDescription = ({ children }: LaunchDescriptionProps) => {
+const LaunchDescription = ({ text }: LaunchDescriptionProps) => {
   return (
     <div
       data-aos="fade-up"
@@ -12,7 +10,7 @@ const LaunchDescription = ({ children }: LaunchDescriptionProps) => {
       data-aos-once="true"
       className={styles.launchdetails}
     >
-      {children}
+      <p>{text}</p>
     </div>
   );
 };

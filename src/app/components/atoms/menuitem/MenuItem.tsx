@@ -1,13 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import { MenuItemProps } from '@/utilities/types';
 
-interface MenuItemProps {
-  href: string;
-  onClick: () => void;
-  children: React.ReactNode;
-}
-
-const MenuItem: React.FC<MenuItemProps> = ({ href, onClick, children }) => {
+const MenuItem = ({ href, onClick, children }: MenuItemProps) => {
   return (
     <Link href={href} onClick={onClick} className="link">
       {children}

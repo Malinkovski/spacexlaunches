@@ -28,7 +28,7 @@ const LaunchesList = () => {
         query: ALL_LAUNCHES_QUERY,
         variables: {
           sort: "launch_date_utc",
-          order: "desc",
+          order: "asc",
           limit: numberOfItems,
         },
         fetchPolicy: "network-only"

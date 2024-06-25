@@ -1,17 +1,10 @@
-import { Button, Card } from "antd";
+import { Card } from "antd";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import styles from "./launchcard.module.scss";
 import Meta from "antd/es/card/Meta";
 import LearnButton from "../../atoms/learnbutton/LearnButton";
-
-interface LaunchCardProps {
-  title: string;
-  date: string;
-  img: StaticImageData | string;
-  alt: string;
-  link: string;
-}
+import { LaunchCardProps } from "@/utilities/types";
 
 const LaunchCard = ({ title, date, img, alt, link }: LaunchCardProps) => {
   return (

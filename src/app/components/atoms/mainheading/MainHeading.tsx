@@ -1,14 +1,7 @@
 import React from "react";
 import styles from "./mainheading.module.scss";
 import AOSWrapper from "../aoswrapper/AosWrapper";
-
-interface MainHeadingProps {
-  subtitle: string;
-  title: string;
-  subtitle2?: string;
-  position?: "left" | "right" | "center";
-  button?: React.ReactNode;
-}
+import { MainHeadingProps } from "@/utilities/types";
 
 const MainHeading = ({
   subtitle,

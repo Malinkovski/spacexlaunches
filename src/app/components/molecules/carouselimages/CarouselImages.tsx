@@ -2,10 +2,7 @@ import React from "react";
 import styles from "./carouselimages.module.scss";
 import { Carousel } from "antd";
 import Image from "next/image";
-
-interface CarouselImagesProps {
-  images: string[];
-}
+import { CarouselImagesProps } from "@/utilities/types";
 
 const CarouselImages = ({ images }: CarouselImagesProps) => {
   return (
